@@ -1,5 +1,5 @@
 const express = require("express");
-const FeriadoService = require("../services/feriadoservice");
+const FeriadoService = require("../services/feriadoService");
 
 class FeriadoController {
   constructor() {

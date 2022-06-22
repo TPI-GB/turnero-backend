@@ -1,12 +1,11 @@
 const config = {
     appConfig: {
-      port: process.env.APP_PORT,
-      host: process.env.APP_HOST
+      port: process.env.PORT || 5000,
+      host: process.env.APP_HOST || '0.0.0.0'
     },
     dbConfig: {
-      port: process.env.DB_PORT,
-      host: process.env.DB_HOST,
-      dbName: process.env.DB_NAME
+      url: process.env.MONGO_URI,
+      
     }
   }
   
