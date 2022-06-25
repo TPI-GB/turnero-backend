@@ -19,21 +19,6 @@ async function TryGeneradorAgenda(today, offset) {
 }
 
 async function GeneradorAgenda(today, offset) {
-<<<<<<< HEAD
-  const mongoDB = "mongodb://127.0.0.1/turnerodb";//cuando subamos a heroku poner la url de la base de datos de heroku
-  await mongoose
-    .connect(mongoDB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then(() => {
-      console.log("Mongoose connect");
-    })
-    .catch((err) => {
-      console.error("App starting error:", err.stack);
-      return;
-    });
-=======
   const mongoConnect = async () => {
     const mongoDB = "mongodb://127.0.0.1/turnerodb";
     await mongoose
@@ -50,7 +35,6 @@ async function GeneradorAgenda(today, offset) {
       });
   };
   await mongoConnect();
->>>>>>> 240511fd6ae8e7f53105d6782e1495be78405458
   var db = mongoose.connection;
 
   const turnos = await Turno.find().exec();
@@ -154,4 +138,4 @@ async function esFeriadoElDia(day) {
   return feriado != null;
 }
 
-TryGeneradorAgenda(new Date(), 60).catch(console.dir);
+TryGeneradorAgenda(new Date(), 30).catch(console.dir);
